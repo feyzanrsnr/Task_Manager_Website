@@ -12,7 +12,6 @@ export default {
     extend: {
 
         colors: {
-
           midnight : "#000c46",
           cosmos : "#5246e0",
           cloud : "#d8d8ef",
@@ -24,14 +23,12 @@ export default {
         
          light:{
           background: "#E6F0FF",
-          primary:"",      
           text: "#000C46",            
           textSecondary: "#6B7280",   
            
          },
          dark:{
-          background: "#0A0F1F", 
-          primary:"",      
+          background: "#0A0F1F",
           text: "#D8D8EF",           
           textSecondary: "#94A3B8",   
                 
