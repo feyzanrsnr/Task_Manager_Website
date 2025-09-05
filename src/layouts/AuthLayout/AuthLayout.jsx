@@ -6,7 +6,10 @@ import { toggleTheme } from '../../redux/themeSlice'
 
 const AuthLayout = () => {
 
-  const [darkMode, setDarkMode] = useState(false)
+  const dispatch = useDispatch()
+
+  //redux'taki theme state'ini çekiyoruz
+  const theme = useSelector((state) => state.theme.theme)
 
   useEffect(() => {
     if(theme === "dark"){
@@ -21,10 +24,12 @@ const AuthLayout = () => {
     <div className='h-screen p-3 m-0 relative bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text'>
       <div className='flex items-center justify-between'>
         <h1 className='text-4xl'>Taskly</h1>
-        <button onClick={() => setDarkMode(!darkMode)}>
-          {
-              darkMode ? <Sun className='cursor-pointer'/>
-              : <Moon className='cursor-pointer'/>
+        <button onClick={() => dispatch(toggleTheme())}>
+          { theme === "dark" ? (
+                <Sun className='cursor-pointer' />
+              ) : (
+                <Moon className='cursor-pointer' />
+              )
           }
         </button>
       </div>
