@@ -1,10 +1,13 @@
 import React from 'react'
 import Button from '../../components/Button'
 import Input from '../../components/Input'
-import img from '../../assets/img.jpeg'
+import img from '../../assets/img.png'
 import { Link } from 'react-router'
+import { useSelector } from 'react-redux'
 
 const RegisterPage = () => {
+
+  const theme = useSelector((state) => state.theme.theme)
   return (
     <div className='flex h-[100%]'>
 
@@ -32,15 +35,15 @@ const RegisterPage = () => {
             
           </div>
 
-            <Button variant='outline' mode='dark' size='full'>Signup</Button>
+            <Button variant='outline' mode={theme === "dark" ? "dark" : "light"} size='full'>Signup</Button>
 
             <span>Already have an account? <Link to="/login" className='font-semibold text-amethyst underline'>Login</Link></span>
 
         </div>
       </div>
 
-      <div className='flex flex-1 bg'>
-        <img src={img} className='w-full rounded-tr-md rounded-br-md'/>
+      <div className='hidden md:flex flex-1 rounded-tr-md rounded-br-md overflow-hidden dark:bg-dark-background'>
+        <img src={img} className='w-full h-[full] object-cover rounded-tr-md rounded-br-md'/>
       </div>
      
     </div>

@@ -1,14 +1,21 @@
 import { Lock, User2 } from 'lucide-react'
 import Button from '../../components/Button'
 import Input from '../../components/Input'
-import img from '../../assets/img.jpeg'
+import img from '../../assets/img.png'
 import { Link } from 'react-router'
+import { useSelector } from 'react-redux'
+
+
 const LoginPage = () => {
+
+  const theme = useSelector((state) => state.theme.theme)
+
   return (
+
     <div className='flex h-[100%]'>
 
-      <div className='flex flex-1'>
-        <img src={img}  className='w-full rounded-tl-md rounded-bl-md'/>
+      <div className='hidden md:flex flex-1 rounded-tl-md rounded-bl-md overflow-hidden dark:bg-dark-background'>
+        <img src={img}  className='w-full h-full object-cover rounded-tl-md rounded-bl-md'/>
       </div>
 
       <div className='flex flex-1 items-center justify-center'>
@@ -31,9 +38,8 @@ const LoginPage = () => {
             
             </div>
 
-            <Button variant='outline' mode='light' size='full'>Login</Button>
+            <Button variant='outline' mode={theme === "dark" ? "dark" : "light"} size='full'>Login</Button>
 
-             
             <span>Don't have an account?  <Link to="/register" className='font-semibold text-amethyst underline'>Register</Link></span>
 
         </div>

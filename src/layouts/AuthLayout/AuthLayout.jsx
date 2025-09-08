@@ -33,7 +33,7 @@ const AuthLayout = () => {
           }
         </button>
       </div>
-      <div className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[50%] h-[70%] bg-white rounded-md text-light-text'>
+      <div className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] md:w-[50%] h-[70%] bg-white rounded-md text-light-text'>
         <Outlet />
       </div>
       <footer className='flex absolute bottom-3 gap-2 cursor-pointer'>
