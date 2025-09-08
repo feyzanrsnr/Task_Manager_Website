@@ -38,15 +38,15 @@ const EditTaskPage = () => {
   
 
   return (
-    <div className='w-full'>
+    <div className='w-full relative'>
 
     <div className="flex justify-center items-start py-10 bg-transparent dark:bg-transparent">
-      <div className="w-full max-w-xl bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
-        <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white">
+      <div className="w-[350px] md:w-full max-w-xl bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
+        <h2 className="text-xl md:text-2xl font-bold mb-6 text-gray-800 dark:text-white">
           Edit Task
         </h2>
 
-        <label className="block mb-4">
+        <label className="flex flex-col md:block mb-4">
           <span className="text-gray-700 dark:text-gray-300 font-semibold">
             Title
           </span>
@@ -54,18 +54,18 @@ const EditTaskPage = () => {
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="mt-2 w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="mt-1 md:mt-2 w-[200px] md:w-full p-2 md:p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </label>
 
-        <label className="block mb-4">
+        <label className="flex flex-col md:block mb-4">
           <span className="text-gray-700 dark:text-gray-300 font-semibold">
             Description
           </span>
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="mt-2 w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none h-32"
+            className="mt-1 md:mt-2 w-[250px] md:w-full p-2 md:p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none h-32"
           />
         </label>
 
@@ -78,7 +78,7 @@ const EditTaskPage = () => {
               type="date"
               value={startDate}
               onChange={(e) => setStartDate(e.target.value)}
-              className="mt-2 w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="mt-1 md:mt-2 w-[120px] md:w-full p-2 md:p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </label>
           <label className="flex-1">
@@ -89,7 +89,7 @@ const EditTaskPage = () => {
               type="date"
               value={endDate}
               onChange={(e) => setEndDate(e.target.value)}
-              className="mt-2 w-full p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="mt-1 md:mt-2 w-[120px] md:w-full p-2 md:p-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </label>
         </div>
@@ -101,7 +101,7 @@ const EditTaskPage = () => {
       </div>
     </div>
     
-    <Link to={'/tasks'}><Back className='absolute bottom-2 bg-darkBgStart text-darkText dark:bg-lightBgStart dark:text-lightText rounded-full w-[25px] h-[25px]'/></Link>
+    <Link to={'/tasks'}><Back className='absolute top-2 left-2 bg-darkBgStart text-darkText dark:bg-lightBgStart dark:text-lightText rounded-full w-[25px] h-[25px]'/></Link>
 </div>
   )
 }

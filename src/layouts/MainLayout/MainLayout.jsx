@@ -25,7 +25,7 @@ const MainLayout = () => {
   }, [theme])
   
   return (
-    <div className='h-screen p-0 m-0 flex md:flex-row bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text'>
+    <div className='h-screen p-0 m-0 flex md:flex-row bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text relative'>
 
       <Sidebar/>
       <div className='flex flex-1 flex-col'>
@@ -36,9 +36,9 @@ const MainLayout = () => {
       
       <button onClick={() => dispatch(toggleTheme())}>
           { theme === "dark" ? (
-                <Sun className='absolute bottom-3 right-3 cursor-pointer' />
+                <Sun className='fixed md:absolute bottom-3 right-3 cursor-pointer' />
               ) : (
-                <Moon className='absolute bottom-3 right-3 cursor-pointer' />
+                <Moon className='fixed md:absolute bottom-3 right-3 cursor-pointer' />
               )
           }
       </button>

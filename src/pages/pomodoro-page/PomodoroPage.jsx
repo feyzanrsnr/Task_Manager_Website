@@ -83,8 +83,8 @@ function PomodoroPage() {
 
     <div className='flex items-center justify-center w-full'>
     
-      <div ref={containerRef} className='flex flex-col items-center justify-center gap-[80px]'>
-      <div className='flex gap-5'>
+      <div ref={containerRef} className='flex flex-col items-center justify-center gap-20'>
+      <div className='flex gap-1 md:gap-5'>
 
         <Button variant='primary' mode={theme === "dark" ? "dark" : "light"} onClick={() => setMode("pomodoro")}>pomodoro</Button>
 
