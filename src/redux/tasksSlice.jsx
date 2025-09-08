@@ -31,14 +31,15 @@ export const tasksSlice = createSlice({
         }
         },
         updateTaskStatus: (state, action) => {
-        const { id } = action.payload;
-        const task = state.tasks.find((t) => t.id === id);
+        const { id, newStatus } = action.payload;
+        const task = state.tasks.find(t => t.id === id);
         if (task) {
-            // Status döngüsü: not_completed → in_progress → completed
-            if (task.status === "not_completed") task.status = "in_progress";
-            else if (task.status === "in_progress")  task.status = "completed";
-            else task.status = "not_completed"; // tekrar başa dön
-            }
+            task.status = newStatus || (() => {
+            if (task.status === "not_completed") return "in_progress";
+            if (task.status === "in_progress") return "completed";
+            return "not_completed";
+            })();
+        }
         },
     }
 })
@@ -75,6 +76,19 @@ export const updateTaskStatusAndPersist = (id) => (dispatch, getState) => {
   const { tasks } = getState().tasks;
   localStorage.setItem(TASKS_STORAGE_KEY, JSON.stringify(tasks));
 };
+
+// Thunk: scroll
+export const updateTaskStatusAndPersistCustom = (id, newStatus) => (dispatch, getState) => {
+  const { tasks } = getState().tasks;
+  const index = tasks.findIndex(t => t.id === id);
+  if (index !== -1) {
+    // Redux state'i doğru şekilde dispatch ile değiştir
+    dispatch(updateTaskStatus({ id, newStatus }));
+    localStorage.setItem(TASKS_STORAGE_KEY, JSON.stringify(getState().tasks.tasks));
+  }
+};
+
+
 
 export default tasksSlice.reducer
 

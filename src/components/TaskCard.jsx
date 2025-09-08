@@ -1,7 +1,7 @@
-import { Trash2 as Trash, CalendarCheck, FlagTriangleRight as Flag, Edit } from 'lucide-react'
+import { Trash2 as Trash, CalendarCheck, FlagTriangleRight as Flag, Edit, Sprout, Leaf, TreeDeciduous, Bean } from 'lucide-react'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router'
-import { deleteTaskAndPersist, updateTaskStatusAndPersist } from '../redux/tasksSlice';
+import { deleteTaskAndPersist, updateTaskStatusAndPersist, updateTaskStatusAndPersistCustom } from '../redux/tasksSlice';
 
 const TaskCard = ({id, title, description, startDate, endDate, status = "not_completed"}) => {
 
@@ -48,32 +48,43 @@ const TaskCard = ({id, title, description, startDate, endDate, status = "not_com
   // card içerik stilleri
   const cardClasses = `bg-gradient-to-br from-blue-500/50 to-blue-400/50 backdrop-blur-md dark:bg-gradient-to-br dark:from-midnight/50 dark:to-deepsea/50 dark:backdrop-blur-md rounded-2xl p-4 w-80 h-[200px] max-h-[300px] text-white shadow-lg hover:transition-all hover:translate-y-2 cursor-pointer `;
 
-   const handleStatusClick = () => {
-    dispatch(updateTaskStatusAndPersist(id));
-  };
-
-  const getStatusStyle = () => {
+  const getStatusIcon = () => {
     switch (status) {
       case "in_progress":
-        return "bg-yellow-500";
+        return <Leaf size={20}/>;
       case "completed":
-        return "bg-green-500";
+        return <TreeDeciduous size={20}/>;
       default:
-        return "bg-red-500";
+        return <Bean size={20}/>;
     }
   };
 
+  // Scroll ile status değişikliği
+  const statuses = ["not_completed", "in_progress", "completed"];
+  const handleWheel = (e) => {
+    e.preventDefault();
+    const currentIndex = statuses.indexOf(status);
+    let newIndex;
+    if (e.deltaY > 0) {
+      newIndex = (currentIndex + 1) % statuses.length;
+    } else {
+      newIndex = (currentIndex - 1 + statuses.length) % statuses.length;
+    }
+    const newStatus = statuses[newIndex];
+    dispatch(updateTaskStatusAndPersistCustom(id, newStatus));
+  };
 
 
   return (
     <div>
       <div className={cardClasses} 
-      onClick={handleStatusClick}
+      onClick={() => {navigate(`/tasks/edit/${id}`)}}
+      onWheel={handleWheel}
       >
         
         {taskDateStatus && (
           <span 
-            className={`px-3 py-1 text-sm font-bold ${taskDateStatus.color} rounded-full text-white absolute top-2 right-2`}>
+            className={`px-3 py-1 text-sm font-bold ${taskDateStatus.color} rounded-xl text-white absolute top-2 right-2`}>
             {taskDateStatus.text}
           </span>
         )}
@@ -88,28 +99,19 @@ const TaskCard = ({id, title, description, startDate, endDate, status = "not_com
         </div>
 
         {/* Status etiketi */}
-        <span
-          className={`absolute bottom-2 left-2 px-3 py-1 text-xs font-semibold rounded-full ${getStatusStyle()}`}
-        >
+        
+        <div className='flex gap-1 items-center absolute bottom-2 left-2 bg-green-50 text-green-500 text-sm font-mono px-1 py-1 rounded-md'>
+          {getStatusIcon()}
           {(status || "not_completed").replace("_", " ")}
-        </span>
+        </div>
 
         
         <button onClick={(e) => {
           e.stopPropagation()
           dispatch(deleteTaskAndPersist(id))
         }}> 
-          <Trash className='absolute right-2 bottom-2 pointer-events-auto hover:text-midnight
-           dark:hover:text-white'/>
+          <Trash className='absolute right-2 bottom-2 pointer-events-auto hover:text-red-400'/>
         </button>
-
-        <button onClick={(e) => {
-           e.stopPropagation()
-          navigate(`/tasks/edit/${id}`)}}> 
-          <Edit size={20} className='absolute right-9 bottom-2 pointer-events-auto hover:text-midnight
-           dark:hover:text-white'/>
-        </button>
-       
         
       </div>
     </div>
