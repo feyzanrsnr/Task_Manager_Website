@@ -5,3 +5,13 @@
 body{
     background-color: #E6F0FF;
 }
+
+:fullscreen {
+  background-color: black; /* Light mod arka plan */
+  color: white; /* Light mod yazı rengi */
+}
+
+:fullscreen button{
+    background-color: white;
+    color: black;
+}

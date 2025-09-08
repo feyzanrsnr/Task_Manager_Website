@@ -4,7 +4,7 @@ import { Moon, Sun } from 'lucide-react'
 import { toggleTheme } from '../../redux/themeSlice'
 import Topbar from '../../components/Topbar'
 import Sidebar from '../../components/Sidebar'
-import { Outlet } from 'react-router'
+import Main from '../../components/Main'
 
 
 
@@ -30,7 +30,7 @@ const MainLayout = () => {
       <Sidebar/>
       <div className='flex flex-1 flex-col'>
       <Topbar/>
-      <Outlet/> 
+      <Main/> 
       </div>
        
       
@@ -41,7 +41,7 @@ const MainLayout = () => {
                 <Moon className='absolute bottom-3 right-3 cursor-pointer' />
               )
           }
-        </button>
+      </button>
     </div>
   )
 }

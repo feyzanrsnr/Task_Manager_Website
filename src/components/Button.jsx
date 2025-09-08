@@ -41,7 +41,7 @@ const Button = ({
           "border-2 border-midnight text-midnight hover:bg-midnight hover:text-light-background focus:ring-midnight focus:shadow-[0_0_20px_rgba(47,189,213,0.6)]",
 
           //ghost
-        variant === "ghost" &&
+          variant === "ghost" &&
           mode === "light" &&
           "bg-transparent text-cosmos hover:bg-cosmos hover:text-light-background focus:ring-cosmos focus:shadow-[0_0_12px_rgba(82,70,224,0.5)]",
 
