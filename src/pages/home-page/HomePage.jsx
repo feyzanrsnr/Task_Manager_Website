@@ -1,9 +1,13 @@
-import React from 'react'
+import DayChart from '../../components/DayChart'
 
-const HomePage = () => {
+
+function DashboardPage() {
   return (
-    <div>HomePage</div>
+    <div className='flex flex-col h-full w-full gap-10 px-5 pt-3'>
+      <p className='text-2xl md:text-3xl'>Welcome again, username</p>
+      <DayChart/>
+    </div>
   )
 }
 
-export default HomePage
+export default DashboardPage

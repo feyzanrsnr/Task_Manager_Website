@@ -89,6 +89,49 @@ export const updateTaskStatusAndPersistCustom = (id, newStatus) => (dispatch, ge
 };
 
 
+// Selector: tarih aralığına göre istatistik
+export const selectTaskStatsByRange = (state, dateRange) => {
+  const tasks = state.tasks.tasks;
+  const now = new Date();
+
+  const filteredTasks = tasks.filter((task) => {
+    if (!task.startDate) return false;
+    const taskDate = new Date(task.startDate);
+
+    if (dateRange === "day") {
+      return (
+        taskDate.getDate() === now.getDate() &&
+        taskDate.getMonth() === now.getMonth() &&
+        taskDate.getFullYear() === now.getFullYear()
+      );
+    }
+
+    if (dateRange === "week") {
+      const startOfWeek = new Date(now);
+      startOfWeek.setDate(now.getDate() - now.getDay());
+      const endOfWeek = new Date(startOfWeek);
+      endOfWeek.setDate(startOfWeek.getDate() + 6);
+      return taskDate >= startOfWeek && taskDate <= endOfWeek;
+    }
+
+    if (dateRange === "month") {
+      return (
+        taskDate.getMonth() === now.getMonth() &&
+        taskDate.getFullYear() === now.getFullYear()
+      );
+    }
+
+    return true;
+  });
+
+  const completed = filteredTasks.filter((t) => t.status === "completed").length;
+  const total = filteredTasks.length;
+  const percentage = total ? Math.round((completed / total) * 100) : 0;
+
+  return { completed, total, percentage };
+};
+
+
 
 export default tasksSlice.reducer
 
