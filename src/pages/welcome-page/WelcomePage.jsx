@@ -15,7 +15,7 @@ const WelcomePage = () => {
           ancak projeye göz atabilir ve yaptığım çalışmaları inceleyebilirsiniz.
         </p>
         <p className='text-md md:text-lg text-gray-600 max-w-lg'>
-          Projenin geliştirme süreci devam ediyor yeni özellikler ve iyileştirmelerle Taskly’yi daha kullanışlı hale getirmeye devam edeceğim.
+          Projenin geliştirme süreci devam ediyor, yeni özellikler ve iyileştirmelerle Taskly’yi daha kullanışlı hale getirmeye devam edeceğim.
         </p>
         <Button onClick={() => navigate("home")} variant='primary' mode="light">Proje Sayfasına Devam et</Button>
 
