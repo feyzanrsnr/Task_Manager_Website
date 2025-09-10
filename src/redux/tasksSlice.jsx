@@ -89,7 +89,7 @@ export const updateTaskStatusAndPersistCustom = (id, newStatus) => (dispatch, ge
 };
 
 
-// Selector: tarih aralığına göre istatistik
+// Selector
 export const selectTaskStatsByRange = (state, dateRange) => {
   const tasks = state.tasks.tasks;
   const now = new Date();

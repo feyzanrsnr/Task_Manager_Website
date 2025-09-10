@@ -25,11 +25,11 @@ export const navigationItems = [
     title: "Pomodoro",
     href: "/pomodoro",
   },
-  {
-    id: 4,
-    icon: <Settings size={32} />,
-    title: "Settings",
-    href: "/settings",
-  },
+  // {
+  //   id: 4,
+  //   icon: <Settings size={32} />,
+  //   title: "Settings",
+  //   href: "/settings",
+  // },
   
 ];

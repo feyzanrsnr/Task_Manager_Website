@@ -2,16 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body, html, #root{
     background-color: #E6F0FF;
+    height: 100vh;
 }
 
 :fullscreen {
   background-color: black; /* Light mod arka plan */
   color: white; /* Light mod yazı rengi */
-}
+} 
 
 :fullscreen button{
-    background-color: white;
-    color: black;
+    background-color: white !important;
+    color: black !important;
+}
+
+.fc-daygrid-day-number {
+  @apply text-lg font-bold text-gray-800;
+}
+
+.fc .fc-button {
+  @apply bg-midnight border-none text-white font-medium rounded-md px-4 py-2;
+}
+
+.dark .fc .fc-button {
+  @apply bg-white border-none text-midnight font-medium rounded-md px-4 py-2;
+}
+
+.fc .fc-button:hover {
+  @apply bg-midnight transform scale-105 transition-transform duration-200;
+} 
+
+.dark .fc .fc-button:hover {
+  @apply bg-white transform scale-105 transition-transform duration-200;
+}
+
+.fc-daygrid-day {
+  @apply h-24;
+}
+
+.fc-day-today {
+  @apply bg-gray-200 !important;
+}
+
+.dark .fc-day-today {
+  @apply bg-slate-200 !important;
+}
+
+
+@media (max-width: 768px) {
+  .fc .fc-daygrid-day-number {
+    font-size: 0.75rem; /* Tailwind: text-xs */
+  }
+  .fc .fc-toolbar-title {
+    font-size: 1rem; /* Tailwind: text-base */
+  }
 }

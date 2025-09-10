@@ -14,20 +14,33 @@ function PomodoroPage() {
   const [mode, setMode] = useState("pomodoro")
   const [timeLeft, setTimeLeft ] = useState(WORK_TIME)
   const [isRunning, setIsRunning] = useState(false)
+  const [isFullScreen, setIsFullScreen] = useState(false)
   const timerRef = useRef(null)
   
   //fullscreen
   const containerRef = useRef(null)
 
   const toggleFullScreen = () => {
-    if(!document.fullscreenElement){
-      containerRef.current.requestFullscreen().catch(err => {
-        console.error(`Tam ekran açılmadı: ${err.message}`)
-      }) 
-    }else{
-      document.exitFullscreen()
+    if (!document.fullscreenElement) {
+      containerRef.current.requestFullscreen()
+        .then(() => setIsFullScreen(true))
+        .catch(err => console.error(`Tam ekran açılmadı: ${err.message}`))
+    } else {
+      document.exitFullscreen().then(() => setIsFullScreen(false))
     }
   }
+
+  // Fullscreen değişimini dinle
+  useEffect(() => {
+    const handleFullScreenChange = () => {
+      setIsFullScreen(!!document.fullscreenElement)
+    }
+
+    document.addEventListener("fullscreenchange", handleFullScreenChange)
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFullScreenChange)
+    }
+  }, [])
 
   //Mode değiştiğinde süreyi güncelle
   useEffect(() => {
@@ -86,11 +99,13 @@ function PomodoroPage() {
       <div ref={containerRef} className='flex flex-col items-center justify-center gap-20'>
       <div className='flex gap-1 md:gap-5'>
 
-        <Button variant='primary' mode={theme === "dark" ? "dark" : "light"} onClick={() => setMode("pomodoro")}>pomodoro</Button>
+        <Button variant='primary' 
+         mode={isFullScreen ? "fullscreen" : theme === "dark" ? "dark" : "light"} 
+        onClick={() => setMode("pomodoro")}>pomodoro</Button>
 
-        <Button variant='primary' mode={theme === "dark" ? "dark" : "light"} onClick={() => setMode("short")}>short break</Button>
+        <Button variant='primary'  mode={isFullScreen ? "fullscreen" : theme === "dark" ? "dark" : "light"} onClick={() => setMode("short")}>short break</Button>
 
-        <Button variant='primary' mode={theme === "dark" ? "dark" : "light"} onClick={() => setMode("long")}>long break</Button>
+        <Button variant='primary'  mode={isFullScreen ? "fullscreen" : theme === "dark" ? "dark" : "light"} onClick={() => setMode("long")}>long break</Button>
        
       </div>
 
@@ -98,7 +113,7 @@ function PomodoroPage() {
 
       <div className='flex items-center gap-3'>
 
-        <Button variant='primary' mode={theme === "dark" ? "dark" : "light"} onClick={toggleTimer}>
+        <Button variant='primary' size='lg' mode={isFullScreen ? "fullscreen" : theme === "dark" ? "dark" : "light"} onClick={toggleTimer}>
           {isRunning ? "PAUSE" : "START"}
         </Button>
 

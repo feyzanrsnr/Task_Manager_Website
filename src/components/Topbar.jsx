@@ -10,9 +10,9 @@ function Topbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-     <div className='flex border-b border-light-text dark:border-b dark:border-dark-text h-[80px]'>
+     <div className='flex shadow-[0_4px_4px_-2px_rgba(209,213,219,1)] dark:shadow-[0_2px_4px_-2px_rgba(255,255,255,1)] h-[80px]'>
       <div className='flex gap-3 items-center ml-auto mr-3'>
-        <span>username</span>
+        <span>feyzanur</span>
         <img src={img} className='w-[40px] h-[40px] rounded-full' />
         <button className='md:hidden' onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X /> : <Menu />}

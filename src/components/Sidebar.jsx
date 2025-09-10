@@ -5,7 +5,7 @@ function Sidebar() {
     
 
   return (
-    <nav className='hidden md:flex flex-col border-r border-light-text dark:border-r dark:border-dark-text w-[15%] h-[100%]'>
+    <nav className='hidden md:flex flex-col w-60 shadow-md shadow-gray-300 dark:shadow-white'>
           <h1 className='text-4xl px-16 py-4'>Taskly.</h1>
         
           <div className="flex flex-col flex-1 items-start px-1 py-8">
