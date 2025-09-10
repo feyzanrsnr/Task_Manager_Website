@@ -10,14 +10,18 @@ import EditTaskPage from '../pages/edit-task-page/EditTaskPage'
 import PomodoroPage from '../pages/pomodoro-page/PomodoroPage'
 import SettingsPage  from '../pages/settings-page/SettingsPage'
 import CalendarPage from '../pages/calendar-page/CalendarPage'
+import WelcomePage from '../pages/welcome-page/WelcomePage'
 
 const route = createBrowserRouter([
     {
-        path:"/",
+    path: "/",
+    element: <WelcomePage />,
+    },
+    {
         element:<MainLayout/>,
         children:[
             {
-                index:true,
+                path:'home',
                 element:<HomePage/>
             },
             {

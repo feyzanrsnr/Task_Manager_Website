@@ -5,7 +5,7 @@ export const navigationItems = [
     id: 0,
     icon: <Home  size={32}/>,
     title: "Home",
-    href: "/"
+    href: "/home"
   },
   {
     id: 1,
