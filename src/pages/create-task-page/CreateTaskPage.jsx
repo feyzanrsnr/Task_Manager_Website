@@ -90,9 +90,9 @@ const CreateTaskPage = () => {
         </div>
 
         <div className="flex gap-4 justify-end">
-          <Button variant="outline" size='sm' mode={theme === "dark" ? "dark" : "light"} onClick={handleSave}> Save</Button>
+          <Button variant="primary" size='full' mode={theme === "dark" ? "dark" : "light"} onClick={handleSave}> Save</Button>
 
-          <Button variant="outline" size='sm' mode={theme === "dark" ? "dark" : "light"} onClick={() => navigate("/tasks")}>Cancel</Button>
+          <Button variant="primary" size='full' mode={theme === "dark" ? "dark" : "light"} onClick={() => navigate("/tasks")}>Cancel</Button>
 
         </div>
       </div>

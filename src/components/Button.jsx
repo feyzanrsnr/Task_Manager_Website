@@ -156,7 +156,7 @@ const Button = ({
       disabled={disabled}
       className={clsx(
         "relative h-12 rounded-xl font-semibold transition-all duration-300 ease-in-out flex items-center justify-center gap-2",
-        "focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent",
+        "focus:outline-none",
 
         // Hover / Active Animasyon
         !disabled && "hover:scale-[1.05] active:scale-[0.98] hover:shadow-lg",
