@@ -5,7 +5,13 @@ import { selectTaskStatsByRange } from "../redux/tasksSlice";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const ChartComponent = ({ title, dateRange, gradientFrom, gradientTo }) => {
+const bgColors = {
+       amethyst: "bg-purple-500/50 dark:bg-purple-500",
+       aqua: "bg-cyan-500/50 dark:bg-cyan-600",
+      "blue-500": "bg-blue-500/50 dark:bg-blue-600",
+}
+
+const ChartComponent = ({ title, dateRange, background}) => {
 
   const { completed, total, percentage } = useSelector((state) =>
     selectTaskStatsByRange(state, dateRange)
@@ -35,7 +41,7 @@ const ChartComponent = ({ title, dateRange, gradientFrom, gradientTo }) => {
 
   return (
     <div
-      className={`bg-gradient-to-br ${gradientFrom} ${gradientTo} backdrop-blur-md gap-4 rounded-xl h-[300px] w-[300px] flex flex-col items-center justify-center`}
+      className={`${bgColors[background]} backdrop-blur-md gap-4 rounded-xl h-[300px] w-[300px] flex flex-col items-center justify-center`}
     >
       <span className="text-xl md:text-2xl text-white">{title}</span>
 

@@ -11,15 +11,15 @@ const WelcomePage = () => {
     <div className='flex flex-col gap-4 w-full h-full items-center justify-center text-center'>
         <h1 className='text-4xl md:text-5xl font-bold font-serif'>Taskly.</h1>
         <p className='text-lg md:text-xl italic font-serif text-gray-700 max-w-xl'>
-          Taskly, kısa veya uzun süreli görevleri yönetmek için geliştirdiğim bir Task Manager uygulamasıdır. Henüz kullanıcıların aktif olarak görev ekleyip yönetebileceği bir aşamada değil, 
+          Taskly, kısa veya uzun süreli görevleri yönetmek için geliştirilen bir Task Manager uygulamasıdır. Henüz kullanıcıların aktif olarak görev ekleyip yönetebileceği bir aşamada değildir, 
           ancak projeye göz atabilir ve yaptığım çalışmaları inceleyebilirsiniz.
         </p>
-        <p className='text-md md:text-lg text-gray-600 max-w-lg'>
+         <Button onClick={() => navigate("home")} variant='primary' mode="light">Proje Sayfasına Devam et</Button>
+        {/* <p className='text-md md:text-lg text-gray-600 max-w-lg'>
           Projenin geliştirme süreci devam ediyor, yeni özellikler ve iyileştirmelerle Taskly’yi daha kullanışlı hale getirmeye devam edeceğim.
-        </p>
-        <Button onClick={() => navigate("home")} variant='primary' mode="light">Proje Sayfasına Devam et</Button>
+        </p> */}
 
-        <p className='mt-2 text-gray-600 dark:text-gray-300'>
+        <p className='mt-10 text-gray-600 dark:text-gray-300'>
             Proje hakkında fikir veya yorumlarınızı benimle paylaşmak isterseniz LinkedIn üzerinden bana ulaşabilirsiniz.
         </p>
 
