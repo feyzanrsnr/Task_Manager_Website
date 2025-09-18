@@ -24,7 +24,7 @@ function TasksPage() {
               />   
               ))}
 
-               <Link className='fixed md:absolute bottom-3 left-3'  to={"/tasks/create"}>
+               <Link className='fixed bottom-3 -left-50'  to={"/tasks/create"}>
                <Button variant='primary' mode={theme === "dark" ? "dark" : "light"}>Create new task</Button>
               </Link>     
 
