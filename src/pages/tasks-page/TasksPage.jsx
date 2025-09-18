@@ -10,7 +10,7 @@ function TasksPage() {
   const tasks = useSelector((state) => state.tasks.tasks)
   
   return (
-    <div className='flex w-full h-full relative px-3 pt-5'>
+    <div className='flex relative px-3 pt-5'>
       {
         tasks.length === 0 ? (
           <EmptyTasks/>

@@ -1,7 +1,7 @@
-import { Trash2 as Trash, CalendarCheck, FlagTriangleRight as Flag, Edit, Sprout, Leaf, TreeDeciduous, Bean } from 'lucide-react'
+import { Trash2 as Trash, CalendarCheck, Leaf, TreeDeciduous, Bean } from 'lucide-react'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router'
-import { deleteTaskAndPersist, updateTaskStatusAndPersist, updateTaskStatusAndPersistCustom } from '../redux/tasksSlice';
+import { deleteTaskAndPersist, updateTaskStatusAndPersistCustom } from '../redux/tasksSlice';
 
 const TaskCard = ({id, title, description, startDate, endDate, status = "not_completed"}) => {
 
@@ -10,13 +10,16 @@ const TaskCard = ({id, title, description, startDate, endDate, status = "not_com
 
     // Tarihi yyyy-mm-dd → dd-mm-yyyy çevirme
     const formatDate = (dateString) => {
-    if (!dateString) return '';
+    if (!dateString) return 'unspecified';
     const [year, month, day] = dateString.split('-');
     return `${day}-${month}-${year}`;
   };
 
 
     const calculateTaskDateStatus = (startDate, endDate) => {
+      if(!startDate || !endDate){
+        return {text:"unspecified", color: "bg-gray-400"}
+      }
     const today = new Date();
     const start = new Date(startDate)
     const end = new Date(endDate)

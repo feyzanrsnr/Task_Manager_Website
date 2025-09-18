@@ -2,10 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body, html, #root{
-    background-color: #E6F0FF;
-    height: 100vh;
-}
+
 
 :fullscreen {
   background-color: black; /* Light mod arka plan */

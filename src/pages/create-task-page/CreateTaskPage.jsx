@@ -15,14 +15,15 @@ const CreateTaskPage = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const theme = useSelector((state) => state.theme.theme)
+  
 
   const handleSave = () => {
     const newTask = {
       id:Date.now(), 
       title, 
       description, 
-      startDate, 
-      endDate,
+      startDate: startDate || null, 
+      endDate: endDate || null,
     }
 
     //redux ile ekle ve kaydet
@@ -98,7 +99,7 @@ const CreateTaskPage = () => {
       </div>
     </div>
 
-    <Link to={'/tasks'}><Back className='absolute top-2 left-2 bg-darkBgStart text-darkText dark:bg-lightBgStart dark:text-lightText rounded-full w-[25px] h-[25px]'/></Link>
+    <Link to={'/tasks'}><Back className='absolute top-3 left-3 bg-darkBgStart text-darkText dark:bg-lightBgStart dark:text-lightText'/></Link>
     </div>
   )
 }

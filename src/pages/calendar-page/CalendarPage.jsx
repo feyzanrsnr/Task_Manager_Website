@@ -196,12 +196,13 @@ import { useEffect, useRef, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin, { Draggable } from "@fullcalendar/interaction";
-import { Trash2, X } from "lucide-react";
+import { Plus, Trash2, X } from "lucide-react";
 
 export default function CalendarApp() {
   const calendarRef = useRef();
   const [events, setEvents] = useState([]);
   const [externalEvents, setExternalEvents] = useState([]);
+  const [inputValue, setInputValue] = useState("")
 
   // Sayfa açıldığında localStorage'dan yükle
   useEffect(() => {
@@ -303,17 +304,23 @@ export default function CalendarApp() {
       >
         <div className="flex flex-col items-center gap-2 w-full">
           <span className="text-md md:text-lg font-semibold text-black">Etkinlik Ekle</span>
-          <input
+          <div className="flex items-center">
+            <input
             type="text"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
             placeholder="Etkinlik adı"
             className="border border-gray-300 text-gray-700 rounded-md p-2 w-full focus:ring-2 focus:ring-blue-400 focus:outline-none"
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                addExternalEvent(e.target.value);
-                e.target.value = "";
-              }
-            }}
           />
+          <button
+           onClick={() => {
+                addExternalEvent(inputValue);
+                setInputValue("") ;
+            }}
+           className="border border-gray-300 text-gray-700 rounded-md p-2">
+            <Plus/>
+          </button>
+          </div>
         </div>
 
         <div className="flex flex-wrap gap-3">

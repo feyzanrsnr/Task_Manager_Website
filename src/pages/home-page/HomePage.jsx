@@ -9,7 +9,7 @@ function DashboardPage() {
   return (
     <div className='flex flex-col h-full w-full gap-5 md:gap-10 px-5 pt-3'>
       <p className='text-2xl md:text-3xl text-center md:text-start'>Welcome again, feyzanur</p>
-      <div className='flex flex-col md:flex-row items-center justify-around gap-y-5 py-8'>
+      <div className='flex flex-col md:flex-row items-center justify-around gap-y-5 py-3 md:py-5'>
       <Chart
         title="Today"
         dateRange="day"
@@ -26,7 +26,7 @@ function DashboardPage() {
         background="blue-500"
       />
       </div>
-      <div className="h-full flex items-center justify-center text-2xl md:text-4xl py-5 font-serif italic">
+      <div className="h-full flex items-center justify-center text-2xl md:text-4xl py-5 font-serif italic text-center">
        {randomSentence}
       </div>
     </div>
