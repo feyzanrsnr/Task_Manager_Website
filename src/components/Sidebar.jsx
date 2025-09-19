@@ -6,7 +6,7 @@ function Sidebar() {
     
 
   return (
-    <nav className='relative flex flex-col items-center gap-16 w-20 md:w-52 bg-slate-400 text-white rounded-br-3xl rounded-tr-3xl'>
+    <nav className='relative flex flex-col items-center gap-16 w-20 md:w-52 bg-[#CCCCCC] text-white rounded-br-3xl rounded-tr-3xl'>
 {/* 
           <button className="md:invisible absolute top-16 left-[70px] bg-white rounded-full">
             <ChevronRight color="black"/>
