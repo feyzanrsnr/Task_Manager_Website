@@ -155,7 +155,7 @@ const Button = ({
       type={type}
       disabled={disabled}
       className={clsx(
-        "relative h-12 rounded-xl font-semibold transition-all duration-300 ease-in-out flex items-center justify-center gap-2",
+        "rounded-lg font-semibold transition-all duration-300 ease-in-out flex items-center justify-center",
         "focus:outline-none",
 
         // Hover / Active Animasyon
@@ -165,33 +165,32 @@ const Button = ({
         // 🎨 Primary
         variant === "primary" &&
           mode === "light" &&
-          "bg-gradient-to-br from-cosmos to-amethyst text-light-background shadow-[0_4px_15px_rgba(82,70,224,0.3)] hover:shadow-[0_8px_25px_rgba(82,70,224,0.5)]",
+          "bg-amethyst text-light-text",
         variant === "primary" &&
           mode === "dark" &&
-          "bg-gradient-to-br from-[#7B61FF] to-[#4BC9FF] text-white shadow-[0_4px_15px_rgba(123,97,255,0.3)] hover:shadow-[0_8px_25px_rgba(75,201,255,0.5)]",
+          "bg-sunrise text-light-text",
 
         // Outline
         variant === "outline" &&
         mode === "light" &&
-        "border-2 border-cosmos text-cosmos bg-white/90 hover:bg-cosmos hover:text-light-background shadow-sm hover:shadow-md px-4 py-1.5 h-auto min-h-[36px] rounded-lg",
+        "border-2 border-light-text text-light-text bg-light-background hover:bg-light-text hover:text-light-background shadow-sm hover:shadow-md px-4 py-1.5 h-auto min-h-[36px] rounded-lg",
 
         variant === "outline" &&
         mode === "dark" &&
-        "border-2 border-[#4BC9FF] text-[#4BC9FF] bg-white/10 hover:bg-[#4BC9FF] hover:text-black shadow-sm hover:shadow-md px-4 py-1.5 h-auto min-h-[36px] rounded-lg",
+        "border-2 border-dark-text text-dark-text bg-dark-background hover:bg-dark-text hover:text-dark-background shadow-sm hover:shadow-md px-4 py-1.5 h-auto min-h-[36px] rounded-lg",
 
         // 🎨 Ghost
         variant === "ghost" &&
           mode === "light" &&
-          "bg-transparent text-cosmos hover:bg-cosmos/10",
+          "bg-light-text text-white",
         variant === "ghost" &&
           mode === "dark" &&
-          "bg-transparent text-[#4BC9FF] hover:bg-[#4BC9FF]/10",
-
+          "bg-dark-text text-light-text",
         // 📏 Size
         size === "sm" && "px-3 py-1 text-sm rounded-lg",
-        size === "md" && "px-5 py-2 text-base",
-        size === "lg" && "px-6 py-3 text-lg",
-        size === "full" && "w-[250px] text-base",
+        size === "md" && "px-5 py-2 text-md",
+        size === "lg" && "px-3 py-2 w-32 text-lg",
+        size === "full" && "h-10 w-[250px] text-base",
 
         className
       )}

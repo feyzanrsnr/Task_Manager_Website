@@ -49,7 +49,7 @@ const TaskCard = ({id, title, description, startDate, endDate, status = "not_com
   const taskDateStatus = calculateTaskDateStatus(startDate,endDate);
 
   // card içerik stilleri
-  const cardClasses = `bg-gradient-to-br from-blue-500/50 to-blue-400/50 backdrop-blur-md dark:bg-gradient-to-br dark:from-blue-600 dark:to-blue-400  rounded-2xl p-4 w-80 h-[200px] max-h-[300px] text-white shadow-lg hover:transition-all hover:translate-y-2 cursor-pointer `;
+  const cardClasses = `bg-gradient-to-br from-blue-400 to-blue-300 backdrop-blur-md dark:bg-gradient-to-br dark:from-blue-700 dark:to-blue-500  rounded-2xl p-4 w-80 h-[200px] max-h-[300px] text-white shadow-lg hover:transition-all hover:translate-y-2 cursor-pointer `;
 
   const getStatusIcon = () => {
     switch (status) {

@@ -12,10 +12,10 @@ export default {
     extend: {
 
         colors: {
-          midnight : "#000c46",
-          cosmos : "#5246e0",
-          cloud : "#d8d8ef",
-          deepsea : "#2c2a9d",
+          midnight : "#4b578a",
+          cosmos : "#8d85f2",
+          cloud : "#f0f0fa",
+          deepsea :"#6a68c9",
           aqua : "#8fe0ea",
           mist : "#a3a7c3",
           amethyst :"#b99cff",

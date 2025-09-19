@@ -349,7 +349,7 @@ export default function CalendarApp() {
       </div>
 
       {/* Takvim */}
-      <div className="w-full md:w-[900px]">
+      <div className="w-full md:w-[700px] lg:w-[900px]">
         <FullCalendar
           ref={calendarRef}
           plugins={[dayGridPlugin, interactionPlugin]}

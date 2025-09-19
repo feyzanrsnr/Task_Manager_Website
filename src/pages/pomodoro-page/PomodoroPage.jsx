@@ -99,13 +99,13 @@ function PomodoroPage() {
       <div ref={containerRef} className='flex flex-col items-center justify-center gap-20'>
       <div className='flex gap-1 md:gap-10'>
 
-        <Button variant='primary' 
+        <Button variant='ghost' size='lg'
          mode={isFullScreen ? "fullscreen" : theme === "dark" ? "dark" : "light"} 
         onClick={() => setMode("pomodoro")}>pomodoro</Button>
 
-        <Button variant='primary'  mode={isFullScreen ? "fullscreen" : theme === "dark" ? "dark" : "light"} onClick={() => setMode("short")}>short break</Button>
+        <Button variant='ghost' size='lg'  mode={isFullScreen ? "fullscreen" : theme === "dark" ? "dark" : "light"} onClick={() => setMode("short")}>short break</Button>
 
-        <Button variant='primary'  mode={isFullScreen ? "fullscreen" : theme === "dark" ? "dark" : "light"} onClick={() => setMode("long")}>long break</Button>
+        <Button variant='ghost' size='lg'  mode={isFullScreen ? "fullscreen" : theme === "dark" ? "dark" : "light"} onClick={() => setMode("long")}>long break</Button>
        
       </div>
 
@@ -113,13 +113,13 @@ function PomodoroPage() {
 
       <div className='flex items-center gap-3'>
 
-        <Button variant='primary' size='lg' mode={isFullScreen ? "fullscreen" : theme === "dark" ? "dark" : "light"} onClick={toggleTimer}>
+        <Button variant='ghost' size='lg' mode={isFullScreen ? "fullscreen" : theme === "dark" ? "dark" : "light"} onClick={toggleTimer}>
           {isRunning ? "PAUSE" : "START"}
         </Button>
 
-        <RotateCcw md:size={30} className='cursor-pointer' onClick={resetTimer}
+        <RotateCcw size={30} className='cursor-pointer hover:scale-[1.3]' onClick={resetTimer}
         />
-        <Fullscreen md:size={30} className='cursor-pointer' onClick={toggleFullScreen} />
+        <Fullscreen size={30} className='cursor-pointer hover:scale-[1.3]' onClick={toggleFullScreen} />
       </div>
     </div>
     </div>
