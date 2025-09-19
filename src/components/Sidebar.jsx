@@ -3,10 +3,9 @@ import { navigationItems } from "../constants/navigationItems"
 import { ArrowBigRight, ChevronLeft, ChevronRight, ChevronRightCircle } from "lucide-react"
 
 function Sidebar() {
-    
-
+  
   return (
-    <nav className='relative flex flex-col items-center gap-16 w-20 md:w-52 bg-[#CCCCCC] text-white rounded-br-3xl rounded-tr-3xl'>
+    <nav className='relative flex flex-col flex-shrink-0 items-center gap-16 w-20 md:w-52 bg-[#323232] text-white rounded-br-3xl rounded-tr-3xl'>
 {/* 
           <button className="md:invisible absolute top-16 left-[70px] bg-white rounded-full">
             <ChevronRight color="black"/>
@@ -21,7 +20,15 @@ function Sidebar() {
           <div className="flex flex-col gap-10">
             {
               navigationItems.map(item => (
-                <NavLink key={item.id} to={item.href}>
+                <NavLink 
+                key={item.id} 
+                to={item.href}
+                className={({isActive}) => 
+                      isActive
+                      ? "border-l-8 border-white rounded-md"
+                      : ""
+                }
+                >
                   <div className="flex px-3 md:gap-4 md:items-center">
                     <span>{item.icon}</span>
                     <span className="hidden md:inline-block md:text-2xl">{item.title}</span>

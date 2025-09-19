@@ -16,10 +16,10 @@ export default {
           cosmos : "#5246e0",
           cloud : "#d8d8ef",
           deepsea : "#2c2a9d",
-          aqua : "#2fbdd5",
+          aqua : "#8fe0ea",
           mist : "#a3a7c3",
-          amethyst :"#7e33f1",
-          sunrise : "#f0b61f",
+          amethyst :"#b99cff",
+          sunrise : "#ffe27a",
         
          light:{
           background: "#F9FAFB",
@@ -39,3 +39,8 @@ export default {
   },
   plugins: [],
 }
+
+
+//#7e33f1 (amethyst)	#b99cff
+//#f0b61f (sunrise)	#ffe27a
+//#2fbdd5 (aqua)	#8fe0ea

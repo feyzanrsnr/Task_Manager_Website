@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router'
 import { ArrowLeft as Back } from 'lucide-react'
 import Button from '../../components/Button'
@@ -38,7 +38,7 @@ const EditTaskPage = () => {
   
 
   return (
-    <div className='w-full relative'>
+    <div className='relative'>
 
     <div className="flex justify-center items-start py-10 bg-transparent dark:bg-transparent">
       <div className="w-[350px] md:w-full max-w-xl bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
@@ -101,7 +101,7 @@ const EditTaskPage = () => {
       </div>
     </div>
     
-    <Link to={'/tasks'}><Back className='absolute top-2 left-2 bg-darkBgStart text-darkText dark:bg-lightBgStart dark:text-lightText rounded-full w-[25px] h-[25px]'/></Link>
+    <Link to={'/tasks'}><Back className='absolute top-4 left-2 bg-darkBgStart text-darkText dark:bg-lightBgStart dark:text-lightText rounded-full w-[25px] h-[25px]'/></Link>
 </div>
   )
 }

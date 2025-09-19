@@ -10,24 +10,26 @@ function TasksPage() {
   const tasks = useSelector((state) => state.tasks.tasks)
   
   return (
-    <div className='flex relative px-3 pt-5'>
+    <div className='min-h-screen relative p-4'>
       {
         tasks.length === 0 ? (
           <EmptyTasks/>
         ) :
 
         (
-          <div className='flex flex-col gap-y-4 md:flex-row md:gap-x-3 md:flex-wrap'>
+          <div className='flex flex-wrap gap-3 pb-16'>
               {tasks.map((task) => (
-                  <TaskCard 
+                  
+                    <TaskCard 
                     key={task.id} {...task}
-              />   
+              /> 
               ))}
 
-               <Link className='fixed bottom-3 -left-50'  to={"/tasks/create"}>
+              
+                <Link className='fixed bottom-3 left-24 md:left-56' to={"/tasks/create"}>
                <Button variant='primary' mode={theme === "dark" ? "dark" : "light"}>Create new task</Button>
               </Link>     
-
+  
       </div>
         )
       }

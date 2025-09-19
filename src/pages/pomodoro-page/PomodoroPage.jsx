@@ -94,7 +94,7 @@ function PomodoroPage() {
 
   return (
 
-    <div className='flex items-center justify-center w-full'>
+    <div className='min-h-screen  flex items-center justify-center'>
     
       <div ref={containerRef} className='flex flex-col items-center justify-center gap-20'>
       <div className='flex gap-1 md:gap-5'>

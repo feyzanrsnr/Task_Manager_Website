@@ -295,12 +295,12 @@ export default function CalendarApp() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-4 p-5 w-full h-full">
+    <div className="min-h-screen flex flex-col md:flex-row gap-4 p-5">
 
       {/* Event ekleme alanı */}
       <div
         id="external-events"
-        className="flex flex-col items-start gap-3 bg-white p-4 rounded-xl shadow-md w-full md:w-64 h-fit"
+        className="flex flex-col gap-3 bg-white p-4 rounded-xl shadow-md h-fit w-full md:w-64 "
       >
         <div className="flex flex-col items-center gap-2 w-full">
           <span className="text-md md:text-lg font-semibold text-black">Etkinlik Ekle</span>

@@ -99,7 +99,7 @@ const CreateTaskPage = () => {
       </div>
     </div>
 
-    <Link to={'/tasks'}><Back className='absolute top-3 left-3 bg-darkBgStart text-darkText dark:bg-lightBgStart dark:text-lightText'/></Link>
+    <Link to={'/tasks'}><Back className='absolute top-4 left-2 bg-darkBgStart text-darkText dark:bg-lightBgStart dark:text-lightText'/></Link>
     </div>
   )
 }

@@ -23,13 +23,11 @@ const MainLayout = () => {
   }, [theme])
   
   return (
-    <div className='p-0 m-0 flex md:flex-row relative bg-light-background dark:bg-dark-background text-light-text dark:text-dark-text'>
-
-      <Sidebar/>
-      <div className='flex flex-1 flex-col'>
-      <Main/> 
-      </div>
-       
+    <div className='relative flex min-h-screen dark:bg-dark-background text-light-text bg-light-background dark:text-dark-text'>
+      
+        <Sidebar/>
+        <Main/>  
+      
       
       <button className='fixed bottom-0 right-0'
         onClick={() => dispatch(toggleTheme())}>
@@ -40,6 +38,7 @@ const MainLayout = () => {
               )
           }
       </button>
+      
     </div>
   )
 }
