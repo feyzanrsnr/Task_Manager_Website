@@ -28,7 +28,7 @@ export default {
            
          },
          dark:{
-          background: "#1C1C1C",
+          background: "#2D2D2D",
           text: "#E0E0E0",           
           textSecondary: "#94A3B8",   
                 
