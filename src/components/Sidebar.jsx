@@ -28,10 +28,10 @@ function Sidebar() {
 
             {
               isOpen
-              ? <button onClick={() => setIsOpen(!isOpen)} className="d:hidden absolute top-20 left-12 bg-white rounded-full">
+              ? <button onClick={() => setIsOpen(!isOpen)} className="d:hidden md:hidden absolute top-20 left-12 bg-white rounded-full">
             <ChevronLeft color="black" width={20} height={20}/>
           </button>
-              :<button onClick={() => setIsOpen(!isOpen)} className="d:hidden absolute top-4 left-0 bg-white rounded-full p-2">
+              :<button onClick={() => setIsOpen(!isOpen)} className="d:hidden md:hidden absolute top-4 left-0 bg-white rounded-full p-2">
             <ChevronRight color="black"/>
           </button>
             }
