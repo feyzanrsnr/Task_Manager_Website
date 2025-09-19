@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router'
-import { ArrowLeft as Back } from 'lucide-react'
+import { ArrowLeft as Back, Trash2 } from 'lucide-react'
 import Button from '../../components/Button'
 import { useDispatch, useSelector } from 'react-redux'
-import { updateTaskAndPersist } from '../../redux/tasksSlice'
+import { deleteTaskAndPersist, updateTaskAndPersist } from '../../redux/tasksSlice'
 
 const EditTaskPage = () => {
 
@@ -35,16 +35,25 @@ const EditTaskPage = () => {
   dispatch(updateTaskAndPersist({ id: taskFromStore.id, title, description, startDate, endDate }));
   navigate("/tasks");
 };
+
+  const handleDelete =  () => {
+    dispatch(deleteTaskAndPersist(taskFromStore.id));
+    navigate("/tasks");
+  };
   
 
   return (
     <div className='relative'>
-
     <div className="flex justify-center items-start py-10 bg-transparent dark:bg-transparent">
       <div className="w-[350px] md:w-full max-w-xl bg-white dark:bg-[#323232]  rounded-2xl shadow-lg p-8">
-        <h2 className="text-xl md:text-2xl font-bold mb-6 text-light-text dark:text-dark-text">
+        <div className='flex items-center justify-between mb-6'>
+          <h2 className="text-xl md:text-2xl font-bold  text-light-text dark:text-dark-text">
           Edit Task
         </h2>
+        <button onClick={handleDelete}>
+          <Trash2/>
+        </button>
+        </div>
 
         <label className="flex flex-col md:block mb-4">
           <span className="text-light-text dark:text-dark-text font-semibold">
@@ -95,7 +104,7 @@ const EditTaskPage = () => {
         </div>
 
         <div className="flex gap-4 justify-end">
-          <Button variant="primary" size='full' mode={theme === "dark" ? "dark" : "light"} onClick={handleSave}> Save</Button>
+          <Button variant="primary" size='full' mode={theme === "dark" ? "dark" : "light"} onClick={handleSave}>Save</Button>
           <Button variant="primary" size='full' mode={theme === "dark" ? "dark" : "light"} onClick={() => navigate("/tasks")}>Cancel</Button>
         </div>
       </div>

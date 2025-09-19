@@ -1,4 +1,4 @@
-import { Trash2 as Trash, CalendarCheck, Leaf, TreeDeciduous, Bean } from 'lucide-react'
+import { Trash2 as Trash, CalendarCheck, Leaf, TreeDeciduous, Bean, Edit, Edit2, Edit2Icon, Edit3, FileEdit, LucideEdit, FolderEdit, LocationEdit, ClipboardEdit } from 'lucide-react'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router'
 import { deleteTaskAndPersist, updateTaskStatusAndPersistCustom } from '../redux/tasksSlice';
@@ -62,27 +62,24 @@ const TaskCard = ({id, title, description, startDate, endDate, status = "not_com
     }
   };
 
-  // Scroll ile status değişikliği
+  // status değişikliği
   const statuses = ["not_completed", "in_progress", "completed"];
-  const handleWheel = (e) => {
-    e.preventDefault();
+
+  const handleClick = () => {
     const currentIndex = statuses.indexOf(status);
-    let newIndex;
-    if (e.deltaY > 0) {
-      newIndex = (currentIndex + 1) % statuses.length;
-    } else {
-      newIndex = (currentIndex - 1 + statuses.length) % statuses.length;
-    }
+    if (currentIndex === -1) return; // güvenlik önlemi
+
+    const newIndex = (currentIndex + 1) % statuses.length;
     const newStatus = statuses[newIndex];
-    dispatch(updateTaskStatusAndPersistCustom(id, newStatus));
+
+  dispatch(updateTaskStatusAndPersistCustom(id, newStatus));
   };
 
 
   return (
     <div>
       <div className={cardClasses} 
-      onClick={() => {navigate(`/tasks/edit/${id}`)}}
-      onWheel={handleWheel}
+      onClick={handleClick}
       >
         
         {taskDateStatus && (
@@ -114,6 +111,12 @@ const TaskCard = ({id, title, description, startDate, endDate, status = "not_com
           dispatch(deleteTaskAndPersist(id))
         }}> 
           <Trash className='absolute right-2 bottom-2 pointer-events-auto hover:text-red-400'/>
+        </button>
+
+        <button onClick={() => {
+          {navigate(`/tasks/edit/${id}`)}
+        }}> 
+          <ClipboardEdit className='absolute right-9 bottom-2 pointer-events-auto hover:text-green-400'/>
         </button>
         
       </div>

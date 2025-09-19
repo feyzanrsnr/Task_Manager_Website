@@ -94,10 +94,10 @@ function PomodoroPage() {
 
   return (
 
-    <div className='min-h-screen  flex items-center justify-center'>
+    <div className='min-h-screen flex items-center justify-center'>
     
       <div ref={containerRef} className='flex flex-col items-center justify-center gap-20'>
-      <div className='flex gap-1 md:gap-5'>
+      <div className='flex gap-1 md:gap-10'>
 
         <Button variant='primary' 
          mode={isFullScreen ? "fullscreen" : theme === "dark" ? "dark" : "light"} 
@@ -109,7 +109,7 @@ function PomodoroPage() {
        
       </div>
 
-      <p className='font-bold text-9xl'>{formatTime(timeLeft)}</p>
+      <p className='font-bold text-7xl md:text-9xl'>{formatTime(timeLeft)}</p>
 
       <div className='flex items-center gap-3'>
 
@@ -117,9 +117,9 @@ function PomodoroPage() {
           {isRunning ? "PAUSE" : "START"}
         </Button>
 
-        <RotateCcw size={30} className='cursor-pointer' onClick={resetTimer}
+        <RotateCcw md:size={30} className='cursor-pointer' onClick={resetTimer}
         />
-        <Fullscreen size={30} className='cursor-pointer' onClick={toggleFullScreen} />
+        <Fullscreen md:size={30} className='cursor-pointer' onClick={toggleFullScreen} />
       </div>
     </div>
     </div>

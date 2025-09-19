@@ -34,10 +34,9 @@ const CreateTaskPage = () => {
 
 
   return (
-    <div className='w-full relative'>
+    <div className='relative pt-20 md:pt-10 flex items-center justify-center'>
 
-    <div className="flex justify-center items-start py-10 bg-transparent dark:bg-transparent">
-      <div className="w-[350px] md:w-full max-w-xl bg-white dark:bg-[#323232] rounded-2xl shadow-lg p-8">
+      <div className="w-[310px] md:w-full max-w-xl bg-white dark:bg-[#323232] rounded-2xl shadow-lg p-8">
         <h2 className="text-xl md:text-2xl font-bold mb-6 text-light-text dark:text-dark-text">
           Create Task
         </h2>
@@ -97,7 +96,7 @@ const CreateTaskPage = () => {
 
         </div>
       </div>
-    </div>
+    
 
     <Link to={'/tasks'}><Back className='absolute top-4 left-2 bg-darkBgStart text-darkText dark:bg-lightBgStart dark:text-lightText'/></Link>
     </div>
