@@ -22,14 +22,14 @@ export default {
           sunrise : "#f0b61f",
         
          light:{
-          background: "#E6F0FF",
-          text: "#000C46",            
+          background: "#F9FAFB",
+          text: "#1A1A1A",            
           textSecondary: "#6B7280",   
            
          },
          dark:{
-          background: "#0A0F1F",
-          text: "#D8D8EF",           
+          background: "#121212",
+          text: "#E0E0E0",           
           textSecondary: "#94A3B8",   
                 
         },       

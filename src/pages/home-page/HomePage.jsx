@@ -1,3 +1,4 @@
+import { User2Icon } from "lucide-react";
 import Chart from "../../components/Chart";
 import { sentences } from "../../constants/sentences";
 
@@ -8,7 +9,10 @@ function DashboardPage() {
 
   return (
     <div className='flex flex-col h-full w-full gap-5 md:gap-10 px-5 pt-3'>
-      <p className='text-2xl md:text-3xl text-center md:text-start'>Welcome again, feyzanur</p>
+       <div className='flex items-center justify-between'>
+        <p>Good Morning, James!</p>
+        <User2Icon/>
+      </div>
       <div className='flex flex-col md:flex-row items-center justify-around gap-y-5 py-3 md:py-5'>
       <Chart
         title="Today"
