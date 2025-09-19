@@ -9,7 +9,7 @@ function DashboardPage() {
 
   return (
     <div className='min-h-screen flex flex-col'>
-       <div className='bg-white shadow-sm rounded-b-xl flex items-center justify-between h-16 text-xl md:text-3xl font-bold px-4 md:px-5'>
+       <div className='bg-white text-light-text shadow-sm rounded-b-xl flex items-center justify-between h-16 text-xl md:text-3xl font-bold px-4 md:px-5'>
         <p>Good Morning, James!</p>
         <User2Icon className="border-2 border-black rounded-full w-7 h-7 md:w-9 md:h-9"/>
       </div>

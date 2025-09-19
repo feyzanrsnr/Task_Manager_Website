@@ -102,7 +102,9 @@ const ChartComponent = ({ title, dateRange,backgroundColor }) => {
 
   return (
     <div
-      className={`relative flex flex-col items-center justify-between h-[320px] w-[280px] rounded-2xl p-6 bg-${backgroundColor} shadow-xl`}>
+      className={`relative flex flex-col items-center justify-between 
+      h-[280px] w-[250px] md:h-[320px] md:w-[280px] 
+      rounded-2xl p-6 bg-${backgroundColor} shadow-xl`}>
       {/* Title */}
       <span className="text-lg md:text-xl font-semibold text-light-text tracking-wide">
         {title}
