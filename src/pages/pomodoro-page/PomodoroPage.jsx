@@ -99,13 +99,19 @@ function PomodoroPage() {
       <div ref={containerRef} className='flex flex-col items-center justify-center gap-20'>
       <div className='flex gap-1 md:gap-10'>
 
-        <Button variant='ghost' size='lg'
+        <Button
+        className="px-3 py-1 text-sm rounded-lg md:px-3 md:py-2 md:w-32 md:text-lg"
+        variant='ghost' 
          mode={isFullScreen ? "fullscreen" : theme === "dark" ? "dark" : "light"} 
         onClick={() => setMode("pomodoro")}>pomodoro</Button>
 
-        <Button variant='ghost' size='lg'  mode={isFullScreen ? "fullscreen" : theme === "dark" ? "dark" : "light"} onClick={() => setMode("short")}>short break</Button>
+        <Button 
+        className="px-3 py-1 text-sm rounded-lg md:px-3 md:py-2 md:w-32 md:text-lg"
+        variant='ghost' mode={isFullScreen ? "fullscreen" : theme === "dark" ? "dark" : "light"} onClick={() => setMode("short")}>short break</Button>
 
-        <Button variant='ghost' size='lg'  mode={isFullScreen ? "fullscreen" : theme === "dark" ? "dark" : "light"} onClick={() => setMode("long")}>long break</Button>
+        <Button 
+        className="px-3 py-1 text-sm rounded-lg md:px-3 md:py-2 md:w-32 md:text-lg"
+        variant='ghost'   mode={isFullScreen ? "fullscreen" : theme === "dark" ? "dark" : "light"} onClick={() => setMode("long")}>long break</Button>
        
       </div>
 
@@ -113,7 +119,9 @@ function PomodoroPage() {
 
       <div className='flex items-center gap-3'>
 
-        <Button variant='ghost' size='lg' mode={isFullScreen ? "fullscreen" : theme === "dark" ? "dark" : "light"} onClick={toggleTimer}>
+        <Button 
+        className="px-3 py-1 text-sm rounded-lg md:px-3 md:py-2 md:w-32 md:text-lg"
+        variant='ghost' mode={isFullScreen ? "fullscreen" : theme === "dark" ? "dark" : "light"} onClick={toggleTimer}>
           {isRunning ? "PAUSE" : "START"}
         </Button>
 
