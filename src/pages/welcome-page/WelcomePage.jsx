@@ -1,5 +1,5 @@
 import { LinkedinIcon } from 'lucide-react'
-import Button from '../../components/Button'
+
 import { useNavigate } from 'react-router'
 
 
@@ -14,7 +14,7 @@ const WelcomePage = () => {
           Taskly, kısa veya uzun süreli görevleri yönetmek için geliştirilen bir Task Manager uygulamasıdır. Henüz kullanıcıların aktif olarak görev ekleyip yönetebileceği bir aşamada değildir, 
           ancak projeye göz atabilir ve yaptığım çalışmaları inceleyebilirsiniz.
         </p>
-         <Button onClick={() => navigate("home")} variant='primary' mode="light">Proje Sayfasına Devam et</Button>
+         <button onClick={() => navigate("home")} className="h-12 px-4 rounded-xl font-semibold transition-all duration-300 ease-in-out bg-gradient-to-br from-cosmos to-amethyst text-light-background shadow-[0_4px_15px_rgba(82,70,224,0.3)] hover:shadow-[0_8px_25px_rgba(82,70,224,0.5)] focus:outline-none hover:scale-[1.05] active:scale-[0.98] ">Proje Sayfasına Devam et</button>
 
         <p className='text-sm md:text-lg mt-10 text-gray-600'>
             Proje hakkında fikir veya yorumlarınızı benimle paylaşmak isterseniz LinkedIn üzerinden bana ulaşabilirsiniz.
@@ -24,7 +24,7 @@ const WelcomePage = () => {
         href='https://www.linkedin.com/in/feyzanursener' 
         target='_blank' 
         rel='noopener noreferrer'
-        className='flex items-center border-2 border-black gap-2 text-black px-6 py-2 rounded-md hover:bg-white'
+        className='flex items-center border-2 border-black gap-2 text-black px-6 py-2 rounded-md hover:scale-[1.05] active:scale-[0.98]'
         >
         <LinkedinIcon color='black'/>
         LinkedIn ile iletişime geç

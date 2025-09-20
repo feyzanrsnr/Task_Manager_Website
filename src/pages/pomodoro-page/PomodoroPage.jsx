@@ -109,7 +109,7 @@ function PomodoroPage() {
        
       </div>
 
-      <p className='font-bold text-7xl md:text-9xl'>{formatTime(timeLeft)}</p>
+      <p className='dark:text-white font-bold text-7xl md:text-9xl'>{formatTime(timeLeft)}</p>
 
       <div className='flex items-center gap-3'>
 
