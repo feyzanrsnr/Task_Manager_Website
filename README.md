@@ -1,12 +1,64 @@
-# React + Vite
+# 📌 Taskly
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu proje React ile geliştirilmiş bir görev yönetim uygulamasıdır. Kullanıcıların günlük görevlerini kolayca takip etmelerine olanak tanırken, pomodoro tekniği ile odaklanarak verimli çalışmaları için de bir zamanlayıcı sunar.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Özellikler
 
-## Expanding the ESLint configuration
+- 📋 **Görev Yönetimi**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  - Yeni görev ekleme
+  - Görevleri güncelleme
+  - Görevleri silme
+  - Tüm görevleri listeleme
+
+- ⏱️ **Pomodoro Entegrasyonu**
+
+  - Odaklanma süresi için pomodoro zamanlayıcısı
+  - Çalışma ve mola sürelerini yönetme
+
+- 🎨 **Tema ve Stil**
+  - Dark mode desteği
+  - Responsive tasarım
+
+---
+
+## 🛠️ Kullanılan Teknolojiler
+
+- React
+- Redux
+- Tailwind CSS
+
+---
+
+## 📷 Ekran Görüntüleri
+
+### Home Sayfası
+
+![Home Sayfası](assets/screenshot1.png)
+
+### Tasks Sayfası
+
+![Tasks Sayfası](assets/screenshot2.png)
+
+### Pomodoro Sayfası
+
+![Pomodoro Sayfası](assets/screenshot3.png)
+
+---
+
+## 📅 Gelecek Versiyonlar
+
+- [ ] 👥 Kullanıcı hesabı oluşturma ve giriş sistemi
+- [ ] ☁️ Backend entegrasyonu ile verilerin kalıcı olarak saklanması
+- [ ] ✅ Görevleri filtreleme ve arama özelliği
+- [ ] 🧩 Responsive tasarımı iyileştirme
+
+- [ ] ⚙️ **Settings Sayfası**
+
+  - Hesap ayarları yönetimi
+  - Dark / Light tema seçimi
+  - Pomodoro sürelerini kullanıcıya göre özelleştirme
+
+---
