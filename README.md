@@ -50,12 +50,12 @@ Bu proje React ile geliştirilmiş bir görev yönetim uygulamasıdır. Kullanı
 
 ## 📅 Gelecek Versiyonlar
 
-- [ ] 👥 Kullanıcı hesabı oluşturma ve giriş sistemi
-- [ ] ☁️ Backend entegrasyonu ile verilerin kalıcı olarak saklanması
-- [ ] ✅ Görevleri filtreleme ve arama özelliği
-- [ ] 🧩 Responsive tasarımı iyileştirme
+- 👥 Kullanıcı hesabı oluşturma ve giriş sistemi
+- ☁️ Backend entegrasyonu ile verilerin kalıcı olarak saklanması
+- ✅ Görevleri filtreleme ve arama özelliği
+- 🧩 Responsive tasarımı iyileştirme
 
-- [ ] ⚙️ **Settings Sayfası**
+- ⚙️ **Settings Sayfası**
 
   - Hesap ayarları yönetimi
   - Dark / Light tema seçimi
