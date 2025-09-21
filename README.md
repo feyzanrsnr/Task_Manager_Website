@@ -36,15 +36,15 @@ Bu proje React ile geliştirilmiş bir görev yönetim uygulamasıdır. Kullanı
 
 ### Home Sayfası
 
-![Home Sayfası](assets/screenshot1.png)
+![Home Sayfası](src/assets/screenshot1.png)
 
 ### Tasks Sayfası
 
-![Tasks Sayfası](assets/screenshot2.png)
+![Tasks Sayfası](src/assets/screenshot2.png)
 
 ### Pomodoro Sayfası
 
-![Pomodoro Sayfası](assets/screenshot3.png)
+![Pomodoro Sayfası](src/assets/screenshot3.png)
 
 ---
 
