@@ -49,4 +49,4 @@ Bu proje React ile geliştirilmiş bir görev yönetim uygulamasıdır. Kullanı
 
 ## 🔗 Canlı Demo
 
-Canlı demo [buraya tıklayın](https://taskly-task-manager-website.vercel.app/).
+Canlı demo için [buraya tıklayın](https://taskly-task-manager-website.vercel.app/).
